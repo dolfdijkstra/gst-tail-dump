@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.fatwire.gst</groupId>
+        <artifactId>gst-parent</artifactId>
+        <version>2</version>
+    </parent>
+    <groupId>com.fatwire.gst</groupId>
+    <artifactId>gst-tail-dump</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>FatWire GST: Tail Dump</name>
+    <description>logfile watcher and command executor in case log event happens</description>
+    <url>http://www.nl.fatwire.com/dta/contrib/gst-tail-dump</url>
+    <inceptionYear>2010</inceptionYear>
+    <developers>
+        <developer>
+            <name>Dolf Dijkstra</name>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:svn:http://www.nl.fatwire.com/svn/dta/contrib/gst-tail-dump/trunk</connection>
+        <developerConnection>scm:svn:http://www.nl.fatwire.com/svn/dta/contrib/gst-tail-dump/trunk</developerConnection>
+        <url>http://www.nl.fatwire.com/viewvc/dta/contrib/gst-tail-dump/trunk</url>
+    </scm>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.fatwire.gst.log.TailDumper</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <distributionManagement>
+        <site>
+            <id>website</id>
+            <url>scp://d670-1.nl.fatwire.com/var/www/html/dta/contrib/gst-tail-dump</url>
+        </site>
+    </distributionManagement>
+</project>
